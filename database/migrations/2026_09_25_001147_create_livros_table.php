@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('anopublicacao')->nullable(); //ano da publicação
             $table->string('descricao')->nullable();
             $table->integer('paginas')->nullable();
+            $table->foreignId('idautor')->constrained('autores', 'idautor'); // aqui eu declarei a chave estrangeira id autor que referenciou o idautor na tabela autor
+            $table->foreignId('idcategoria')->constrained('categorias', 'idcategoria'); //mesma coisa do anterior
             $table->timestamps();
         });
     }

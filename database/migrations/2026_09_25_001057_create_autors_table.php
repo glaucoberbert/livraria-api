@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('autors', function (Blueprint $table) {
+        Schema::create('autores', function (Blueprint $table) {
             $table->id('idautor'); //Chave Primária
             $table->string('nome', 45); //Nome do autor
             $table->string('nacionalidade', 45)->nullable(); //Nacionalidade do Autor, o nullable() indica que ela pode ser nula, é o equivalente ao string? ou o string.Empty do C#
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('autors');
+        Schema::dropIfExists('autores');
     }
 };
