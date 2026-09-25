@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->id('idcategoria'); //id da categoria
             $table->string('nome', 45); //nome da categoria
-            $table->string('descricao'); //Descrição
+            $table->string('descricao'); //Descrição (aqui só não coloquei o 255 do lado porque como não tem limite já pega o máximo da string)
             $table->timestamps();
         });
     }

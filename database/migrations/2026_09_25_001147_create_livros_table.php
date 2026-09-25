@@ -12,7 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('livros', function (Blueprint $table) {
-            $table->id();
+            $table->id('idlivro'); //id livro
+            $table->string('titulo')->nullable(); //Aqui o título é até 255 por isso n coloquei capacidade, e parece pela imagem de referência que no livro nada é obrigatório, então é nulablle em tudo
+            $table->string('isbn', 45)->nullable(); // Aqui como o limite é menor tem que por
+            $table->integer('anopublicacao')->nullable(); //ano da publicação
+            $table->string('descricao')->nullable();
+            $table->integer('paginas')->nullable();
             $table->timestamps();
         });
     }
