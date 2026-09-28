@@ -4,7 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
-{
-    //
+class Categoria extends Model{
+
+    protected $table='categorias';
+    protected $primaryKey='idcategoria';
+    protected $fillable=['nome','descricao'];
+
+        public function livros(){
+            return $this->hasMany(Livro::class, 'idcategoria', 'idcategoria');
+        }
 }
